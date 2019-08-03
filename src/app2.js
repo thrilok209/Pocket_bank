@@ -24,22 +24,22 @@ var tokenData = {
 var cDaiAddress = "0xf5dce57282a584d2746faf1593d3121fcac444dc"
 window.addEventListener('load', function() { // setup metamask
 
-  let fm = new Fortmatic('pk_test_6C9E311D9924D050');
-  web3js = new Web3(fm.getProvider());
-  console.log(web3)
-  var version = web3.version.api;
-  console.log(version);
-  console.log(web3js.eth.accounts);
-  fm.user.login().then(() => {
-  web3js.eth.getAccounts().then((data)=> {
-    console.log(data)
-    userAccount = data
+//   let fm = new Fortmatic('pk_test_6C9E311D9924D050');
+//   web3js = new Web3(fm.getProvider());
+//   console.log(web3)
+//   var version = web3.version.api;
+//   console.log(version);
+//   console.log(web3js.eth.accounts);
+//   fm.user.login().then(() => {
+//   web3js.eth.getAccounts().then((data)=> {
+//     console.log(data)
+//     approveToken()
+//   }); // ['0x...']
+//   // console.log(web3.eth.accounts[0])
+// });
+console.log(web3.eth.accounts[0])
+    userAccount = web3.eth.accounts[0]
     getCStats()
-    approveToken()
-  }); // ['0x...']
-  // console.log(web3.eth.accounts[0])
-});
-
   // startApp()
 })
 
@@ -85,7 +85,7 @@ function setEarnRate(data) {
           let liveEarn = apr/(100*2073600*100)*userDaiBal
           console.log(liveEarn, apr ,userDaiBal)
           lifeTimeEarned += liveEarn
-          $(".balance").text(lifeTimeEarned.toFixed(8));
+          $(".balance").text("$"+lifeTimeEarned.toFixed(8));
 
         },10)
       }
@@ -109,8 +109,8 @@ function approveToken(){
 }
 
 function supplyToken() {
-  var exchangeContract = new web3js.eth.Contract(cDai, cDaiAddress);
-    // exchangeContract.methods.mint().send({
-    //
-    // }).then((a) => {
+  // var exchangeContract = new web3js.eth.Contract(cDai, cDaiAddress);
+  //   // exchangeContract.methods.mint().send({
+  //   //
+  //   // }).then((a) => {
 }
