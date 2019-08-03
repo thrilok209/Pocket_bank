@@ -4,18 +4,21 @@
     <meta charset="utf-8">
     <title>Pocket Bank</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
-    <script language="javascript" type="text/javascript" src="./src/abi.js"></script>
-    <script language="javascript" type="text/javascript" src="./src/app2.js"></script>
+    <!-- <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script> -->
+
     <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/fortmatic@latest/dist/fortmatic.js"></script> -->
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
     <script src="https://app.tor.us/v0.0.20/embed.min.js"
         integrity="sha384-tDTJ86ig+B5z7vXffrWKaBLC8dOCtiSV4a6OjWboyxfvcFNyL9Udxcld4kj1Wxny"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/main.css" media="screen" title="no title">
+
+    <script language="javascript" type="text/javascript" src="./src/abi.js"></script>
+    <script language="javascript" type="text/javascript" src="./src/app2.js"></script>
   </head>
   <body>
     <!-- Image and text -->
@@ -26,7 +29,7 @@
       </a>
 
       </div>
-    
+
   <div class="container lend">
     <h1 class="balance">$...</h1>
     <div class: "input">
@@ -45,14 +48,97 @@
       <input readonly type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div> -->
         <div class: "button">
-    <button type="button" class="btn btn-outline-dark btn-lg">Deposit</button>
+    <button type="button" class="btn btn-outline-dark btn-lg" data-toggle="modal" data-target="#exampleModal">Deposit</button>
     <button type="button" class="btn btn-outline-dark btn-lg">Withdraw</button>
     </div>
     </div>
   </div>
-    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="lendModal" aria-hidden="true">
+<div class="modal-dialog  modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h5 class="modal-title  font-weight-bold" id="lendModal">DEPOSIT</h5>
+    </div>
+    <div class="modal-body lend-btn">
+        <div class="">
+          <button onclick="openValModal('DAI')" type="button"  id="button" class="btn btn-outline-dark btn-lg" >
+            <img src="./asset/logo/tokens/dai.svg" width="30" height="30" class="d-inline-block align-top center-block" alt="">
+            <br>DAI</button>
+
+            <button onclick="openValModal('USDC')"type="button" class="btn btn-outline-dark btn-lg token-BTN ml-3">
+              <img src="./asset/logo/tokens/usdc.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+              <br>USD</button>
+        </div>
+      <!-- <button type="button" class="btn btn-outline-dark btn-lg">
+
+        Other</button> -->
+        <div class="mt-3">
+          <button type="button" class="btn btn-outline-dark btn-lg token-BTN " onclick="openValModal('ETH')" >
+            <img src="./asset/logo/tokens/eth.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            <br>ETH</button>
+
+
+
+            <button onclick="openValModal('BAT')" type="button" class="btn btn-outline-dark btn-lg token-BTN ml-3">
+              <img src="./asset/logo/tokens/bat.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+              <br>BAT</button>
+
+            <button onclick="openValModal('ZRX')" type="button" class="btn btn-outline-dark btn-lg token-BTN ml-3">
+              <img src="./asset/logo/tokens/zrx.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+              <br>ZRX</button>
+
+
+        </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade " id="tokenValueModal" tabindex="-1" role="dialog" aria-labelledby="tokenValueModalTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="tokenValueModalTitle">Modal title</h5>
+
+    </div>
+    <div class="modal-body">
+      <div class="container">
+        <div class="row">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            </div>
+            <input type="text" id="tokenAmt" class="form-control text-center p-4" placeholder="amount" aria-label="Amt" aria-describedby="basic-addon1">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            </div>
+            <input type="text" id="expectedDai" class="form-control text-center p-4" value="0" placeholder="expectedDai" aria-label="Amt" aria-describedby="basic-addon1">
+          </div>
+        </div>
+
+        <div class="row center-align">
+          <button onclick="checkApproval()" type="button" class="btn btn-outline-dark btn-block">LEND</button>
+        </div>
+      </div>
+
+  </div>
+
+  </div>
+</div>
+</div>
+
+    <!-- <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script> -->
     <script src="js/mustache.min.js" charset="utf-8"></script>
-    <script src="js/app.js" charset="utf-8"></script>
     <script src="app.js" charset="utf-8"></script>
   </body>
 </html>

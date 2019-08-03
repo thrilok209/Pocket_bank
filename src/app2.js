@@ -21,14 +21,41 @@ var tokenData = {
 
 }
 
+var pocketContractAddr = "0x"
 var cDaiAddress = "0xf5dce57282a584d2746faf1593d3121fcac444dc"
+
+
+// let web3;
+// var web3js;
+// window.addEventListener('load', function() { // setup metamask
+//
+//   if (typeof web3 !== 'undefined') {
+//
+//     web3js = new Web3(web3.currentProvider);
+//     console.log("connected to metamask")
+//
+//   } else {
+//     let url = "https://mainnet.infura.io/v3/784200396bbd43a4807bd1eb6415f4af"
+//
+//     web3js = new Web3(new Web3.providers.HttpProvider(url));
+//     console.log("connected to localhost")
+//   }
+//
+//
+//             // web3js.eth.getAccounts().then(x => userAccount=x);
+//   var version = web3js.version.api;
+//   console.log(version);
+//   // startApp()
+// })
+
+
+
+
+
 window.addEventListener('load', function() { // setup metamask
 
 //   let fm = new Fortmatic('pk_test_6C9E311D9924D050');
-//   web3js = new Web3(fm.getProvider());
 //   console.log(web3)
-//   var version = web3.version.api;
-//   console.log(version);
 //   console.log(web3js.eth.accounts);
 //   fm.user.login().then(() => {
 //   web3js.eth.getAccounts().then((data)=> {
@@ -37,10 +64,26 @@ window.addEventListener('load', function() { // setup metamask
 //   }); // ['0x...']
 //   // console.log(web3.eth.accounts[0])
 // });
-console.log(web3.eth.accounts[0])
+// let url = "https://mainnet.infura.io/v3/784200396bbd43a4807bd1eb6415f4af"
+// web3js = new Web3(new Web3.providers.HttpProvider(url));
+// console.log(web3.eth.accounts[0])
     userAccount = web3.eth.accounts[0]
+    console.log(userAccount)
     getCStats()
+
+  //     var version = web3.version.api;
+  //     console.log(version);
+  // console.log(web3)
+ // web3js = web3
+   var version = web3.version.api;
+   console.log(version);
   // startApp()
+
+
+  // // METAMASK
+  // var web3js = new Web3(Web3.givenProvider)
+  // userAccount = web3js.eth.accounts[0]
+  // console.log(userAccount)
 })
 
 function getCStats() {
@@ -103,14 +146,43 @@ function approveToken(){
   exchangeContract.methods.approve(cDaiAddress,String(10*56)).send({from:userAccount}).then(x => {
 
     console.log(x)
-    // showStatus(("Approve TX Hash: "+String(x.blockHash)))
   });
 
 }
 
-function supplyToken() {
-  // var exchangeContract = new web3js.eth.Contract(cDai, cDaiAddress);
-  //   // exchangeContract.methods.mint().send({
-  //   //
-  //   // }).then((a) => {
+function openValModal(name){
+  if(name == "DAI"){
+    $('#exampleModal').modal('hide')
+    $("#tokenValueModalTitle").text("Lend " + name)
+    $('#tokenAmt').attr("placeholder", name+ "To Lend")
+    $('#tokenAmt').attr("dataToken", name)
+    $('#tokenValueModal').modal('show')
+
+  }
+
+  $("#tokenValueModalTitle").text("Lend " + name)
+  $('#tokenAmt').attr("placeholder", name+ "To swap")
+  $('#tokenAmt').attr("dataToken", name)
+  // console.log($('#tokenAmt').attr("dataToken"))
+  $('#exampleModal').modal('hide')
+  $('#tokenValueModal').modal('show')
+}
+
+function checkApproval(){
+  getApproval()
+}
+function getApproval(){
+  let token = $('#tokenAmt').attr("dataToken")
+  token = token.toLowerCase()
+  var exchangeContract = new web3.eth.Contract(ERC20, tokenData[token].address);
+  exchangeContract.methods.allowance(String(userAccount),pocketContractAddr).call().then(x => {
+    console.log(x)
+  })
+}
+function supplyToken(tokenAddr) {
+  var exchangeContract = new web3js.eth.Contract(pocketContractABI, pocketContractAddr);
+//     exchangeContract.methods.swapAndLead(tokenAddr).send({
+//
+//     }).then((a) => {
+// }
 }
