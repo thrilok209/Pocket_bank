@@ -26,49 +26,63 @@
 
       </div>
     
-  <div class="container lend">
+  <div class="container lend" style="padding-top:150px;">
     <h1 class="balance">$...</h1>
     <div class: "input">
-      <div>
-      </div>
-    <!-- <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-default">Earnings:</span>
-      </div>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-    </div> -->
-    <!-- <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-default">APR:</span>
-      </div>
-      <input readonly type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-    </div> -->
         <div class: "button">
-    <button type="button" class="btn btn-outline-dark btn-lg width132">Deposit</button>
-    <button type="button" class="btn btn-outline-dark btn-lg width132">Withdraw</button>
-    </div>
+            <button type="button" class="btn btn-outline-dark btn-lg width132">Deposit</button>
+            <button type="button" class="btn btn-outline-dark btn-lg width132">Withdraw</button>
+        </div>
     </div>
   </div>
+
+  <div class="container lend" style="margin-top:10px;">
+    <div class: "input">
+        <div class: "button">
+            <button type="button" class="btn btn-outline-dark btn-lg" style="width:264px;" onclick="testWyre();">Upload Your $</button>
+        </div>
+    </div>
+  </div>
+
+  <div class="container lend" style="margin-top:10px;padding-bottom:150px;">
+    <div class: "input">
+        <div class: "button">
+            <button type="button" class="btn btn-outline-dark btn-lg width132">Send</button>
+            <button type="button" class="btn btn-outline-dark btn-lg width132">Receive</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Vishva Code -->
   <div class="build">
     Built on top of:
   </div>
   <div class="row rowlogo">
     <div class="column columnLogo">
-      <img src="index.svg" alt="Torus" style="width:10em">
+      <img src="img/index.svg" alt="Torus" style="width:10em">
     </div>
     <div class="column columnLogo">
-      <img src="wyre.png" alt="Wyre" style="width:10em">
+      <img src="img/wyre.png" alt="Wyre" style="width:10em">
     </div>
     <div class="column columnLogo">
-      <img src="ens.svg" alt="ENS" style="width:10em">
+      <img src="img/ens.svg" alt="ENS" style="width:10em">
     </div>
     <div class="column columnLogo">
-      <img src="kyber.svg" alt="Kyber Network" style="width:10em">
+      <img src="img/kyber.svg" alt="Kyber Network" style="width:10em">
     </div>
     <div class="column columnLogo">
-      <img src="comp.png" alt="Compound" style="width:15em">
+      <img src="img/comp.png" alt="Compound" style="width:15em">
     </div>
   </div>
+
+    <!-- Install the Wyre Loader -->
+    <script src="https://verify.sendwyre.com/js/widget-loader.js"></script>
+    <script src="js/wyre.js" charset="utf-8"></script>
+
+    <!-- Vishva Code end -->
+
+
+
     <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <script src="js/mustache.min.js" charset="utf-8"></script>
     <script src="js/app.js" charset="utf-8"></script>
