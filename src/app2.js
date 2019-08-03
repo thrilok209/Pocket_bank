@@ -82,12 +82,12 @@ function setEarnRate(data) {
         let bal = Number(token.supply_balance_underlying.value) - Number(token.lifetime_supply_interest_accrued.value)
         userDaiBal = bal
         setInterval(()=>{
-          let liveEarn = apr/(100*2073600*100)*userDaiBal
+          let liveEarn = apr/(100*2073600*10)*userDaiBal
           console.log(liveEarn, apr ,userDaiBal)
           lifeTimeEarned += liveEarn
           $(".balance").text("$"+lifeTimeEarned.toFixed(8));
 
-        },10)
+        },100)
       }
     })
   }
