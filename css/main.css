@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 body {
   color: rgb(39, 39, 93);
+  font-family: Montserrat;
 }
 .button {
   margin-left: 10em;
@@ -30,7 +31,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  padding: 150px 0;
   font-family: Montserrat;
   background: white  }
 
@@ -46,9 +47,35 @@ h1 {
 
 .navbar-brand {
   font-size: 30px;
-  color: teal;
+  color: rgb(58, 58, 58);
   font-family: Montserrat;
   font-weight: bold;
   text-align: center;
 
+}
+.columnLogo {
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.rowlogo {
+  margin: 60px 0;
+}
+
+.name {
+  text-align: center;
+  font-weight: 30px;
+}
+
+.width132 {
+  width: 132px;
+}
+
+.build {
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: -0.8px;
+  font-weight: bold;
 }
