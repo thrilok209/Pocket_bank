@@ -79,15 +79,9 @@ h1 {
   border-radius: 8px;
 }
 
-<<<<<<< HEAD
-/* #exampleModal {
-  border: none;
-  box-shadow: 0px 0px 5px 5px #f5f5f5;
-} */
-=======
 }
 .columnLogo {
-  display: block; 
+  display: block;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -112,4 +106,3 @@ h1 {
   letter-spacing: -0.8px;
   font-weight: bold;
 }
->>>>>>> c026c7a9e9ae0e47c45a8dd853692c47edd796b4
