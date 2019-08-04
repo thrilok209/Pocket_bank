@@ -26,7 +26,7 @@ var cDaiAddress = "0xf5dce57282a584d2746faf1593d3121fcac444dc"
 
 
 // let web3;
-// var web3js;
+var web3js;
 // window.addEventListener('load', function() { // setup metamask
 //
 //   if (typeof web3 !== 'undefined') {
@@ -35,16 +35,29 @@ var cDaiAddress = "0xf5dce57282a584d2746faf1593d3121fcac444dc"
 //     console.log("connected to metamask")
 //
 //   } else {
-//     let url = "https://mainnet.infura.io/v3/784200396bbd43a4807bd1eb6415f4af"
 //
-//     web3js = new Web3(new Web3.providers.HttpProvider(url));
+//     web3js = new Web3(new Web3.providers.HttpProvider(""));
 //     console.log("connected to localhost")
 //   }
 //
 //
 //             // web3js.eth.getAccounts().then(x => userAccount=x);
-//   var version = web3js.version.api;
-//   console.log(version);
+//   var version = web3.version.api;
+//   console.log(version)
+//   console.log(web3js);
+//
+//   var accountInterval = setInterval(function() {
+//    web3js.eth.getAccounts().then(x =>
+//      {
+//        if (String(x) != String(userAccount)) {
+//          console.log("checking userAccount")
+//          userAccount = String(x)
+//        }
+//      });
+//            }, 100);
+//
+//   // userAccount = web3js.eth.accounts[0]
+//      console.log(userAccount)
 //   // startApp()
 // })
 
@@ -64,26 +77,22 @@ window.addEventListener('load', function() { // setup metamask
 //   }); // ['0x...']
 //   // console.log(web3.eth.accounts[0])
 // });
-// let url = "https://mainnet.infura.io/v3/784200396bbd43a4807bd1eb6415f4af"
-// web3js = new Web3(new Web3.providers.HttpProvider(url));
 // console.log(web3.eth.accounts[0])
     userAccount = web3.eth.accounts[0]
     console.log(userAccount)
     getCStats()
+    console.log(web3)
+    let url = "https://mainnet.infura.io/v3/784200396bbd43a4807bd1eb6415f4af"
+    web3js = new Web3(new Web3.providers.HttpProvider(url));
+    console.log(web3js)
 
+    // web3.eth.getBalance(userAccount).then(console.log)
   //     var version = web3.version.api;
   //     console.log(version);
   // console.log(web3)
  // web3js = web3
    var version = web3.version.api;
    console.log(version);
-  // startApp()
-
-
-  // // METAMASK
-  // var web3js = new Web3(Web3.givenProvider)
-  // userAccount = web3js.eth.accounts[0]
-  // console.log(userAccount)
 })
 
 function getCStats() {
@@ -174,10 +183,16 @@ function checkApproval(){
 function getApproval(){
   let token = $('#tokenAmt').attr("dataToken")
   token = token.toLowerCase()
-  var exchangeContract = new web3.eth.Contract(ERC20, tokenData[token].address);
-  exchangeContract.methods.allowance(String(userAccount),pocketContractAddr).call().then(x => {
-    console.log(x)
-  })
+  console.log(token)
+  console.log(ERC20,tokenData[token].tokenAdd)
+  var exchangeContract = new web3js.eth.Contract(ERC20,tokenData[token].tokenAdd);
+  console.log(exchangeContract)
+  console.log(String(userAccount),"0x14a09329d0f1273e1e99c52392729d5e1fccec25")
+  // exchangeContract.methods.allowance(String("0xf4B9aaae3AB39325D12EA62fCcD3c05266e07e21"),"0x14a09329d0f1273e1e99c52392729d5e1fccec25").call().then(x => {
+  //   console.log(x)
+  // })
+  // // var x = exchangeContract.allowance(String(userAccount),pocketContractAddr)
+  // console.log(x)
 }
 function supplyToken(tokenAddr) {
   var exchangeContract = new web3js.eth.Contract(pocketContractABI, pocketContractAddr);

@@ -10,11 +10,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script> -->
 
-    <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"></script>
-    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
+    <!-- <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"></script> -->
+
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
     <script src="https://app.tor.us/v0.0.20/embed.min.js"
-        integrity="sha384-tDTJ86ig+B5z7vXffrWKaBLC8dOCtiSV4a6OjWboyxfvcFNyL9Udxcld4kj1Wxny"
-        crossorigin="anonymous"></script>
+            integrity="sha384-tDTJ86ig+B5z7vXffrWKaBLC8dOCtiSV4a6OjWboyxfvcFNyL9Udxcld4kj1Wxny"
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/main.css" media="screen" title="no title">
 
     <script language="javascript" type="text/javascript" src="./src/abi.js"></script>
@@ -96,6 +97,22 @@
 </div>
 
 
+
+<!-- Modal -->
+<div class="modal fade" id="ReceiveModal" tabindex="-1" role="dialog" aria-labelledby="receiveModalTitle" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered modal-sm" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h5 class="modal-title  font-weight-bold" id="receiveModalTitle">Receive</h5>
+    </div>
+    <div class="modal-body">
+      <img src="./asset/img/qr.png" width="200" height="200" class="d-inline-block align-top" alt="">
+
+    </div>
+  </div>
+</div>
+</div>
+
 <!-- Modal -->
 <div class="modal fade " id="tokenValueModal" tabindex="-1" role="dialog" aria-labelledby="tokenValueModalTitle" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
@@ -134,29 +151,52 @@
 </div>
 </div>
 
+<div class="container lend" style="margin-top:10px;">
+  <div class: "input">
+      <div class: "button">
+          <button type="button" class="btn btn-outline-dark btn-lg" style="width:264px;" onclick="testWyre();">Upload Your $</button>
+      </div>
+  </div>
+</div>
 
+<div class="container lend" style="margin-top:10px;padding-bottom:150px;">
+  <div class: "input">
+      <div class: "button">
+          <button type="button" class="btn btn-outline-dark btn-lg width132">Send</button>
+          <button type="button" class="btn btn-outline-dark btn-lg width132" data-toggle="modal" data-target="#ReceiveModal">Receive</button>
+      </div>
+  </div>
+</div>
+
+<!-- Vishva Code -->
 <div class="build">
   Built on top of:
 </div>
 <div class="row rowlogo">
   <div class="column columnLogo">
-    <img src="index.svg" alt="Torus" style="width:10em">
+    <img src="img/index.svg" alt="Torus" style="width:10em">
   </div>
   <div class="column columnLogo">
-    <img src="wyre.png" alt="Wyre" style="width:10em">
+    <img src="img/wyre.png" alt="Wyre" style="width:10em">
   </div>
   <div class="column columnLogo">
-    <img src="ens.svg" alt="ENS" style="width:10em">
+    <img src="img/ens.svg" alt="ENS" style="width:10em">
   </div>
   <div class="column columnLogo">
-    <img src="kyber.svg" alt="Kyber Network" style="width:10em">
+    <img src="img/kyber.svg" alt="Kyber Network" style="width:10em">
   </div>
   <div class="column columnLogo">
-    <img src="comp.png" alt="Compound" style="width:15em">
+    <img src="img/comp.png" alt="Compound" style="width:15em">
   </div>
 </div>
+
+  <!-- Install the Wyre Loader -->
+  <script src="https://verify.sendwyre.com/js/widget-loader.js"></script>
+  <script src="js/wyre.js" charset="utf-8"></script>
+
+  <!-- Vishva Code end -->
     <!-- <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script> -->
     <script src="js/mustache.min.js" charset="utf-8"></script>
-    <script src="app.js" charset="utf-8"></script>
+    <!-- <script src="app.js" charset="utf-8"></script> -->
   </body>
 </html>
