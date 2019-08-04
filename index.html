@@ -47,7 +47,7 @@
     </div> -->
         <div class: "button">
     <button type="button" class="btn btn-outline-dark btn-lg" data-toggle="modal" data-target="#exampleModal">Deposit</button>
-    <button type="button" class="btn btn-outline-dark btn-lg">Withdraw</button>
+    <button type="button" class="btn btn-outline-dark btn-lg" data-toggle="modal" data-target="#withdrawModal">Withdraw</button>
     </div>
     </div>
   </div>
@@ -151,6 +151,76 @@
 </div>
 </div>
 
+
+
+<!-- Modal -->
+<div class="modal fade " id="sendModal" tabindex="-1" role="dialog" aria-labelledby="sendModalTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="sendModalTitle">Send</h5>
+
+    </div>
+    <div class="modal-body">
+      <div class="container">
+        <div class="row">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            </div>
+            <input type="text" id="ensAddr" class="form-control text-center p-4" placeholder="ENS" aria-label="ens" aria-describedby="basic-addon1">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            </div>
+            <input type="text" id="amtToSend" class="form-control text-center p-4" placeholder="Amount to send" aria-label="Amt" aria-describedby="basic-addon1">
+          </div>
+        </div>
+
+        <div class="row center-align">
+          <button onclick="send()" type="button" class="btn btn-outline-dark btn-block">Send</button>
+        </div>
+      </div>
+
+  </div>
+
+  </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade " id="withdrawModal" tabindex="-1" role="dialog" aria-labelledby="withdrawModalTile" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="withdrawModalTile">Withdraw</h5>
+
+    </div>
+    <div class="modal-body">
+      <div class="container">
+
+        <div class="row">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            </div>
+            <input type="text" id="amtToWithdraw" class="form-control text-center p-4" placeholder="Amount" aria-label="Amt" aria-describedby="basic-addon1">
+          </div>
+        </div>
+
+        <div class="row center-align">
+          <button onclick="send()" type="button" class="btn btn-outline-dark btn-block">Withdraw</button>
+        </div>
+      </div>
+
+  </div>
+
+  </div>
+</div>
+</div>
+
 <div class="container lend" style="margin-top:10px;">
   <div class: "input">
       <div class: "button">
@@ -159,13 +229,21 @@
   </div>
 </div>
 
-<div class="container lend" style="margin-top:10px;padding-bottom:150px;">
+<div class="container lend" style="margin-top:10px;padding-bottom:180px;">
   <div class: "input">
       <div class: "button">
-          <button type="button" class="btn btn-outline-dark btn-lg width132">Send</button>
+          <button type="button" class="btn btn-outline-dark btn-lg width132"  data-toggle="modal" data-target="#sendModal">Send</button>
           <button type="button" class="btn btn-outline-dark btn-lg width132" data-toggle="modal" data-target="#ReceiveModal">Receive</button>
       </div>
   </div>
+  <div class="pt-4">
+    <p>Contract Address: <b>
+
+      0x14a09329d0f1273e1e99c52392729d5e1fccec25
+      </b>
+    </p>
+  </div>
+
 </div>
 
 <!-- Vishva Code -->

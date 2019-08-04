@@ -23,7 +23,7 @@ var tokenData = {
 
 var pocketContractAddr = "0x"
 var cDaiAddress = "0xf5dce57282a584d2746faf1593d3121fcac444dc"
-
+ var checkTimeInterval;
 
 // let web3;
 var web3js;
@@ -78,9 +78,15 @@ window.addEventListener('load', function() { // setup metamask
 //   // console.log(web3.eth.accounts[0])
 // });
 // console.log(web3.eth.accounts[0])
-    userAccount = web3.eth.accounts[0]
+checkTimeInterval=  setInterval(()=>{
+  userAccount = web3.eth.accounts[0]
+    console.log(userAccount , web3.eth.accounts[0])
+      if(userAccount){
+        getCStats()
+      }
+    },1000)
+
     console.log(userAccount)
-    getCStats()
     console.log(web3)
     let url = "https://mainnet.infura.io/v3/784200396bbd43a4807bd1eb6415f4af"
     web3js = new Web3(new Web3.providers.HttpProvider(url));
@@ -96,6 +102,7 @@ window.addEventListener('load', function() { // setup metamask
 })
 
 function getCStats() {
+  clearInterval(checkTimeInterval)
   var that = this;
       $.ajax({
         url: `https://api.compound.finance/api/v2/ctoken`,
